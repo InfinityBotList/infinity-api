@@ -18,17 +18,29 @@ async autoPost(options={}) {
  options.timerLoop = this.loop;
 
  // Get Bot Stats
- const serverCount = this.client.guilds.cache.size;
+ const serverCount = await this.client.guilds.cache.size;
  const shardCount = "0";
 
  // Sending Data + Loop
  setInterval(() => {
-  const data = fetch(`${this.api}/bot/${this.botID}`, {
+  const data = await fetch(`${this.api}/bot/${this.botID}`, {
         method: 'post',
         body: { 'servers': serverCount, 'shards': shardCount },
         headers: { 'Content-Type': 'application/json', 'authorization': this.token }
    });
   }, this.loop);
+ }
+
+async manualPost(options={}) {
+ const serverCount = options.servers;
+ const shardCount = options.shards;
+
+ // Manual Post To API
+ const data = await fetch(`${this.api}/bot/${this.botID}`, {
+        method: 'post',
+        body: { 'servers': serverCount, 'shards': shardCount },
+        headers: { 'Content-Type': 'application/json', 'authorization': this.token }
+  });
  }
 }
 
