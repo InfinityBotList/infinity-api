@@ -25,6 +25,7 @@ async autoPost(options={}) {
  setInterval(() => {
   const data = fetch(`${this.api}/bot/${this.botID}`, {
         method: 'post',
+        body: {},
         headers: { 'Content-Type': 'application/json', 'authorization': this.token },
    });
   }, this.loop);
