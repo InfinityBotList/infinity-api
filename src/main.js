@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 
 class Poster extend EventEmitter {
   constructor(client, token) {
-    super(options);
+    super();
     this.client = client;
     this.token = token;
     this.api = ("https://api.infinitybots.xyz");
