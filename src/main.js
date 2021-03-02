@@ -19,14 +19,14 @@ async autoPost(options={}) {
 
  // Get Bot Stats
  const serverCount = null;
- const userCount = null;
+ const shardCount = "0";
 
  // Sending Data + Loop
  setInterval(() => {
   const data = fetch(`${this.api}/bot/${this.botID}`, {
         method: 'post',
-        body: {},
-        headers: { 'Content-Type': 'application/json', 'authorization': this.token },
+        body: { 'servers': serverCount, 'shards': shardCount },
+        headers: { 'Content-Type': 'application/json', 'authorization': this.token }
    });
   }, this.loop);
  }
