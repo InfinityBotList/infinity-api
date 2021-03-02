@@ -1,6 +1,24 @@
 # infinity-api
 
-## Getting It Setup!
+# Table Of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Events](#events)
+
+
+# Installation
+
+## NPM
+```js
+npm install --save ibl
+```
+
+## Yarn
+```js
+yarn install ibl
+```
+
+# Usage
 
 ```js
 const { Client } = require('discord.js');
@@ -15,4 +33,14 @@ Poster.autoPost({
 });
 
 client.login("token");
+```
+
+# Events
+
+## Posted:
+
+```js
+client.on("posted", () => {
+  console.log("Posted!");
+});
 ```
