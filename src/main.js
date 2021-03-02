@@ -1,11 +1,12 @@
 const { EventEmitter } = require("events");
+const fetch = require('node-fetch');
 
 class Poster extend EventEmitter {
   constructor(client, token) {
     super(options);
     this.client = client;
     this.token = token;
-    this.api = ("https://api.infinitybots.xyz/");
+    this.api = ("https://api.infinitybots.xyz");
  }
 
 async autoPost(options={}) {
@@ -15,6 +16,15 @@ async autoPost(options={}) {
  // Set Options
  options.botID = this.botID;
  options.timerLoop = this.loop;
+
+ // Sending Data + Loop
+
+setInterval(() => {
+ const data = fetch(`${this.api}/bot/${this.botID}`, {
+        method: 'post',
+        headers: { 'Content-Type': 'application/json', 'authorization': this.token },
+   });
+  }, this.loop);
  }
 }
 module.exports = Poster;
