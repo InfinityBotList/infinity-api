@@ -18,7 +18,7 @@ async autoPost(options={}) {
  options.timerLoop = this.loop;
 
  // Get Bot Stats
- const serverCount = null;
+ const serverCount = this.client.guilds.cache.size;
  const shardCount = "0";
 
  // Sending Data + Loop
