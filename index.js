@@ -1,5 +1,5 @@
 'use strict';
 
 module.exports = {
-  IBL: require("./src/main")
+  Poster: require("./src/main")
 };
