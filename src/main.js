@@ -17,14 +17,18 @@ async autoPost(options={}) {
  options.botID = this.botID;
  options.timerLoop = this.loop;
 
- // Sending Data + Loop
+ // Get Bot Stats
+ const serverCount = null;
+ const userCount = null;
 
-setInterval(() => {
- const data = fetch(`${this.api}/bot/${this.botID}`, {
+ // Sending Data + Loop
+ setInterval(() => {
+  const data = fetch(`${this.api}/bot/${this.botID}`, {
         method: 'post',
         headers: { 'Content-Type': 'application/json', 'authorization': this.token },
    });
   }, this.loop);
  }
 }
+
 module.exports = Poster;
