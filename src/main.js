@@ -28,6 +28,7 @@ async autoPost(options={}) {
         body: { 'servers': serverCount, 'shards': shardCount },
         headers: { 'Content-Type': 'application/json', 'authorization': this.token }
    });
+   this.client.emit("posted");
   }, this.loop);
  }
 
