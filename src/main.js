@@ -1,4 +1,6 @@
-class Client extends BaseClient {
+const { EventEmitter } = require("events");
+
+class Poster extend EventEmitter {
   constructor(client, token, options={}) {
     super(options);
     this.client = client;
@@ -7,3 +9,4 @@ class Client extends BaseClient {
 
 
 }
+module.exports = Poster;
