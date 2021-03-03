@@ -9,7 +9,7 @@ class Poster extends EventEmitter {
     this.api = ("https://api.infinitybots.xyz");
  }
 
-async autoPost(options={  botID: null, timerLoop: 1.2e+6 }, init=true) {
+async autoPost(options={  botID: null, timerLoop: 300000 }, init=true) {
   if (init == false) return;
 
  // Get Bot Stats
@@ -18,8 +18,8 @@ async autoPost(options={  botID: null, timerLoop: 1.2e+6 }, init=true) {
  const body = { 'servers': serverCount, 'shards': shardCount };
   
  // Sending Data + Loop
- setInterval(() => {
-  fetch(`${this.api}/bot/${options.botID}`, {
+ setInterval(async () => {
+  await fetch(`${this.api}/bot/${options.botID}`, {
         method: 'post',
         headers: { 'Content-Type': 'application/json', 'authorization': this.token },
         body: JSON.stringify(body)
@@ -28,14 +28,15 @@ async autoPost(options={  botID: null, timerLoop: 1.2e+6 }, init=true) {
   }, options.timerLoop);
 }
 
-  async manualPost(options={}) {
+async manualPost(options={}) {
  const serverCount = options.servers;
- const shardCount = options.shards;
+  const shardCount = options.shards;
+   const bodyM = { 'servers': serverCount, 'shards': shardCount };
 
  // Manual Post To API
- const data = fetch(`${this.api}/bot/${this.botID}`, {
+  fetch(`${this.api}/bot/${this.botID}`, {
         method: 'post',
-        body: { 'servers': serverCount, 'shards': shardCount },
+        body: JSON.stringify(bodyM),
         headers: { 'Content-Type': 'application/json', 'authorization': this.token }
   });
  }

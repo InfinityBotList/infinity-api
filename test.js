@@ -6,7 +6,7 @@ const Poster = new ibl.Poster(client, "HqXXC0FYe78x69KCEhLlYrOoGd6ktytBrokQifDlp
 
 Poster.autoPost({
   botID: "765088908773818378", // Your botID
-  timerLoop: 1.2e+6 // This is in MS, this is default to 5 minutes
+  timerLoop: 300000 // This is in MS, this is default to 5 minutes
 }, true);
 
 client.login("NzcxNDgzNzQxOTc3NzA2NTI2.X5syOQ.cdMtgu8cD3E02jpj4FfD7aQ48dM");
