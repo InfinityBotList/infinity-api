@@ -23,7 +23,9 @@
   },
   "homepage": "https://github.com/InfinityBotList/infinity-api#readme",
   "dependencies": {
+    "discord.js": "^12.5.1",
     "events": "^3.3.0",
+    "got": "^11.8.2",
     "node-fetch": "^2.6.1"
   }
 }

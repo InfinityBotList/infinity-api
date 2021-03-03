@@ -25,7 +25,7 @@ const { Client } = require('discord.js');
 const client = new Client();
 const ibl = require('IBL');
 
-const Poster = ibl.Poster(client, "AuthToken");
+const Poster = new ibl.Poster(client, "AuthToken");
 
 Poster.autoPost({
   botID: "474745745457", // Your botID

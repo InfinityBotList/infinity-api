@@ -9,25 +9,23 @@ class Poster extends EventEmitter {
     this.api = ("https://api.infinitybots.xyz");
  }
 
-async autoPost(options={}, init=true) {
- if(options.timerLoop == "300000") return console.log("[IBL] Your Loop Can't Be More Than Every 5 Minutes!");
- // Set Options
- options.botID = this.botID;
- options.timerLoop = this.loop;
+async autoPost(options={  botID: null, timerLoop: 1.2e+6 }, init=true) {
+  if (init == false) return;
 
  // Get Bot Stats
- const serverCount = await this.client.guilds.cache.size;
+ const serverCount = "500";
  const shardCount = "0";
-
+ const body = { 'servers': serverCount, 'shards': shardCount };
+  
  // Sending Data + Loop
  setInterval(() => {
-  const data = await fetch(`${this.api}/bot/${this.botID}`, {
+  fetch(`${this.api}/bot/${options.botID}`, {
         method: 'post',
-        body: { 'servers': serverCount, 'shards': shardCount },
-        headers: { 'Content-Type': 'application/json', 'authorization': this.token }
-   });
+        headers: { 'Content-Type': 'application/json', 'authorization': this.token },
+        body: JSON.stringify(body)
+   }).then(async res => {console.log(await res.json())})
    this.client.emit("posted");
-  }, this.loop);
+  }, options.timerLoop);
 }
 
   async manualPost(options={}) {
@@ -35,7 +33,7 @@ async autoPost(options={}, init=true) {
  const shardCount = options.shards;
 
  // Manual Post To API
- const data = await fetch(`${this.api}/bot/${this.botID}`, {
+ const data = fetch(`${this.api}/bot/${this.botID}`, {
         method: 'post',
         body: { 'servers': serverCount, 'shards': shardCount },
         headers: { 'Content-Type': 'application/json', 'authorization': this.token }
