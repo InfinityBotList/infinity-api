@@ -1,0 +1,25 @@
+{
+  "name": "ibl-api",
+  "version": "1.0.0",
+  "description": "InfinityBotList Poster For Discord.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InfinityBotList/infinity-api.git"
+  },
+  "keywords": [
+    "infinitybots",
+    "infinitybotlist",
+    "poster",
+    "auto"
+  ],
+  "author": "MaximKing1",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/InfinityBotList/infinity-api/issues"
+  },
+  "homepage": "https://github.com/InfinityBotList/infinity-api#readme"
+}

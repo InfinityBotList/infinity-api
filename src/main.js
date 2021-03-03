@@ -1,7 +1,7 @@
 const { EventEmitter } = require("events");
 const fetch = require('node-fetch');
 
-class Poster extend EventEmitter {
+class Poster extends EventEmitter {
   constructor(client, token) {
     super();
     this.client = client;
@@ -9,10 +9,8 @@ class Poster extend EventEmitter {
     this.api = ("https://api.infinitybots.xyz");
  }
 
-async autoPost(options={}) {
- if(options.timerLoop =< "300000") return console.log("[IBL] Your Loop Can't Be More Than Every 5 Minutes!");
- it(typeof options.timerLoop !== "number") throw new Error("[IBL] TimerLoop Needs To Be In MS and Numbers!");
-
+async autoPost(options={}, init=true) {
+ if(options.timerLoop == "300000") return console.log("[IBL] Your Loop Can't Be More Than Every 5 Minutes!");
  // Set Options
  options.botID = this.botID;
  options.timerLoop = this.loop;
@@ -30,9 +28,9 @@ async autoPost(options={}) {
    });
    this.client.emit("posted");
   }, this.loop);
- }
+}
 
-async manualPost(options={}) {
+  async manualPost(options={}) {
  const serverCount = options.servers;
  const shardCount = options.shards;
 
