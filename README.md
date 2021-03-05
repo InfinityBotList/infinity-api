@@ -10,12 +10,12 @@
 
 ## NPM
 ```js
-npm install --save ibl
+npm install --save ibl-api
 ```
 
 ## Yarn
 ```js
-yarn install ibl
+yarn install ibl-api
 ```
 
 # Usage
@@ -23,7 +23,7 @@ yarn install ibl
 ```js
 const { Client } = require('discord.js');
 const client = new Client();
-const ibl = require('IBL');
+const ibl = require('IBL-api');
 
 const Poster = new ibl.Poster(client, "AuthToken");
 
