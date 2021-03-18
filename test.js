@@ -1,12 +1,12 @@
-const { Client } = require('./src/main');
-const client = null;
+const discord = require('discord.js');
+const client = new discord.Client();
+const { Client } = require('./index.js');
 
-const IBL = new Client(client, 'botAuth', {
-  webPort: 3001,
-  webPath: '/IBLhook',
-  webAuth: 'Auth you placed in custom webhooks',
-});
+const IBL = new Client(client, 'botAuth');
 
-const Vote = IBL.voteWebhook(true);
+IBL.autoPost({
+    botID: '474745745457', // Your botID
+    timerLoop: 300000, // This is in MS, this is default to 5 minutes
+}, true);
 
-
+client.login('token');

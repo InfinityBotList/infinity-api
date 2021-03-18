@@ -14,13 +14,14 @@ class Client extends EventEmitter {
     this.webAuth = options.webAuth;
     this.api = 'https://api.infinitybots.xyz';
     this.webPath = options.webPath;
-    app.listen(options.webPort);
+    this.webPort = options.webPort;
     app.use(bodyParser.json());
     this.emit('ready', 'IBL-API Ready!');
+    app.listen(this.webPort);
   }
 
-  async voteWebhook() {
-    app.post(`${this.webPath}`, async (req, res) => {
+ voteWebhook() {
+    app.post(`${this.webPath}`, (req, res) => {
       // Respond to invalid requests
       res.setHeader('X-Powered-By', 'InfinityBotList/Express');
       if (req.header('Authorization') != this.webAuth)
@@ -96,6 +97,7 @@ class Client extends EventEmitter {
       },
     });
   }
+
 }
 
 module.exports = Client;

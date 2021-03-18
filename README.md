@@ -25,8 +25,8 @@ yarn install ibl-api
 **AutoPoster:**
 
 ```js
-const { client } = require('discord.js');
-const client = new Client();
+const discord = require('discord.js');
+const client = new discord.Client();
 const { Client } = require('ibl-api');
 
 const IBL = new Client(client, 'botAuth');
@@ -43,8 +43,8 @@ client.login('token');
 
 ```js
 const { Client } = require('ibl-api');
-const { client } = require('discord.js');
-const client = new Client();
+const discord = require('discord.js');
+const client = new discord.Client();
 
 const IBL = new Client(client, 'botAuth', {
   webPort: 3001,
