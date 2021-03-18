@@ -27,7 +27,7 @@ yarn install ibl-api
 ```js
 const { client } = require('discord.js');
 const client = new Client();
-const { Client } = require('IBL-api');
+const { Client } = require('ibl-api');
 
 const IBL = new Client(client, 'botAuth');
 
@@ -42,7 +42,7 @@ client.login('token');
 **Vote Webhooks:**
 
 ```js
-const { Client } = require('IBL-api');
+const { Client } = require('ibl-api');
 const { client } = require('discord.js');
 const client = new Client();
 
