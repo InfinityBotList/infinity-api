@@ -31,13 +31,10 @@ const { Client } = require('IBL-api');
 
 const IBL = new Client(client, 'botAuth');
 
-IBL.autoPost(
-  {
+IBL.autoPost({
     botID: '474745745457', // Your botID
     timerLoop: 300000, // This is in MS, this is default to 5 minutes
-  },
-  true
-);
+}, true);
 
 client.login('token');
 ```
