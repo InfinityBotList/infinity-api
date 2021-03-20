@@ -62,7 +62,7 @@ class Client extends EventEmitter {
     if (init == false) return;
 
     // Get Bot Stats
-    const serverCount = '500';
+    const serverCount = this.client.guilds.cache.size;
     const shardCount = '0';
     const body = { servers: serverCount, shards: shardCount };
 
