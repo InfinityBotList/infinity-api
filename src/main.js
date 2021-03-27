@@ -12,7 +12,7 @@ class Client extends EventEmitter {
     this.client = client;
     this.token = token;
     this.webAuth = options.webAuth;
-    this.api = 'https://api.infinitybots.xyz';
+    this.api = 'https://api.infinitybotlist.com';
     this.webPath = options.webPath;
     this.webPort = options.webPort;
     app.use(bodyParser.json());
