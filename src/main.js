@@ -15,7 +15,9 @@ class Client extends EventEmitter {
     this.api = 'https://api.infinitybotlist.com';
     this.webPath = options.webPath;
     this.webPort = options.webPort;
+    
     app.use(bodyParser.json());
+    
     this.emit('ready', 'IBL-API Ready!');
     app.listen(this.webPort);
   }
