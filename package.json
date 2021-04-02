@@ -1,0 +1,21 @@
+{
+  "name": "ibl-api",
+  "version": "2.0.0",
+  "description": "Main wrapper for infinity bot list to post stats, get info, intract with out webhooks!",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo"
+  },
+  "repository": {},
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "discord.js": "^12.5.1",
+    "eris": "^0.14.0"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1"
+  }
+}
