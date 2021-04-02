@@ -29,10 +29,10 @@ export class IBL {
      * const client = new Discord.Client();
      * const { Infinity } = require("ibl-api");
      * const ibl = new Infinity(client, "Infinity Bot List Token");
-     * ibl.autopost(15 * 60 * 1000); //Autopost every 15 minutes
+     * ibl.autopost(15 * 60 * 1000); //AutoPost every 15 minutes
      */
     async autopost(interval?: number): Promise<boolean> {
-        if (!interval) interval = 1800000; //30 minutes in milleseconds
+        if (!interval) interval = 1800000; //30 minutes in milliseconds
         if (interval > 300000) throw new RangeError("Can only post stats every 5 minutes due to rate limits on the API!")
         await this.postStats();
         setInterval(async () => {
