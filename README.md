@@ -19,10 +19,9 @@ npm install --save ibl-api
 yarn install ibl-api
 ```
 
-# Usage
+# Usage:
 
-**Posting:**
-
+## Posting:
 ```js
 const discord = require('discord.js');
 const client = new discord.Client();
@@ -30,14 +29,13 @@ const { IBL } = require('ibl-api');
 
 const ibl = new IBL(client, 'botAuth');
 
-ibl.postStats() //Posts stats (retreived from bot client)
+ibl.postStats() //Posts stats (retrieved from bot client)
 ibl.autopost(60 * 60 * 1000) //Posts every hour
 
 client.login('token');
 ```
 
-**Vote Webhooks:**
-
+## Vote Webhooks:
 ```js
 const { IBL } = require('ibl-api');
 const discord = require('discord.js');
@@ -52,7 +50,7 @@ ibl.voteWebhook(
 
 ibl.webhook.on("ready", port => {
     console.log(`Infinity Bot List webhook is listening on ${port}`)
-})
+});
 
 ibl.webhook.on("vote", async (user, bot, type) => {
   console.log(`${user} voted for ${bot}`);
