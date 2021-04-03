@@ -1,6 +1,6 @@
 import express from "express";
 import { EventEmitter } from "events";
-export = class Webhook extends EventEmitter {
+export default class Webhook extends EventEmitter {
     app: express.Application;
     port: number;
     auth: string;
