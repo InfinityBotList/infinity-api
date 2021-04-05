@@ -12,9 +12,10 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = require("express");
 var events_1 = require("events");
-module.exports = /** @class */ (function (_super) {
+var Webhook = /** @class */ (function (_super) {
     __extends(Webhook, _super);
     /**
      * @param auth The key for the Infinity Bot List webhook to use
@@ -44,3 +45,4 @@ module.exports = /** @class */ (function (_super) {
     }
     return Webhook;
 }(events_1.EventEmitter));
+exports.default = Webhook;
