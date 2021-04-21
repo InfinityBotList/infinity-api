@@ -59,3 +59,4 @@ ibl.webhook.on("vote", async (user, bot, type) => {
 client.login('token');
 ```
 
+# All Code Owned By: The InfinityBotList Team
